@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CineJPH07.Views.Views.MainPage">
+    <StackLayout>
+        <ListView x:Name="listaCartelera" ItemSelected="ubicarPelicula" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="{Binding Imagen}" HeightRequest="60"/>
+                            <StackLayout>
+                                <Label Text="{Binding Nombre}"></Label>
+                                <Label Text="{Binding FechaEstreno}"></Label>
+                                <Label Text="{Binding Genero}"></Label>
+                            </StackLayout>
+                            <Label Text="{Binding Duracion,StringFormat='Duracion:{0:F0}'}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

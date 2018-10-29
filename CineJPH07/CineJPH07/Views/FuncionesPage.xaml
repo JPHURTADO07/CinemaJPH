@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CineJPH07.Views.FuncionesPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding Nombre, StringFormat='Titulo: {0:F0}'}"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Estrenos: "/>
+                <Label Text="{Binding FechaEstreno}"/>
+            </StackLayout>
+            <Label Text="{Binding Genero, StringFormat='Genero: {0:F0}'}"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Numero de Boletas: "/>
+                <Entry x:Name="MiEntry"  WidthRequest="200" HeightRequest="20"/>
+            </StackLayout>
+
+            <ListView x:Name="listFunciones" ItemSelected="Selected_Funcion" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Cinema, StringFormat=' {0:F0} -'}"/>
+                                <Label Text="{Binding Sala, StringFormat=' {0:F0} -'}"/>
+                                <Label Text="{Binding Ciudad}"/>
+                                <Label Text="{Binding Precio, StringFormat='${0:F0}'}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cinema_PJOH.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +12,8 @@ namespace CineJPH07
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new LoginPage());
+
         }
 
         protected override void OnStart()
